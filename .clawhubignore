@@ -1,0 +1,11 @@
+# ClawHub publishes the OpenClaw bundle plugin from the repository root:
+# the manifests, README, LICENSE and the skill folders only.
+*
+!openclaw.plugin.json
+!plugin.json
+!mcp.json
+!package.json
+!README.md
+!LICENSE
+!skills/
+!skills/**

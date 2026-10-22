@@ -1,0 +1,27 @@
+{
+  "id": "orshot",
+  "name": "Orshot",
+  "description": "Automate video, PDF and image generation from templates and social media posting from OpenClaw. One install adds the hosted Orshot MCP server (OAuth, no API key) and the Orshot skills: render images, PDFs and video from your templates, schedule and publish posts to Instagram, LinkedIn, X, TikTok and 9 more, build carousels, and design social media content templates. No bundled code.",
+  "version": "1.0.0",
+  "categories": [
+    "media"
+  ],
+  "skills": [
+    "skills/orshot",
+    "skills/orshot-social-media-scheduler",
+    "skills/orshot-carousel",
+    "skills/orshot-social-media-content"
+  ],
+  "mcpServers": {
+    "orshot": {
+      "url": "https://mcp.orshot.com/mcp",
+      "transport": "streamable-http",
+      "auth": "oauth"
+    }
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

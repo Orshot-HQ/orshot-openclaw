@@ -6,14 +6,20 @@ Orshot is an API for automated image, PDF and video generation from templates: h
 
 ## Install
 
-Connect the hosted Orshot MCP server once (OAuth, no API key, 100 free credits a month):
+One line installs the bundle plugin: the hosted Orshot MCP server (OAuth, no API key, 100 free credits a month) plus all four skills.
+
+```bash
+openclaw plugins install @orshot/orshot
+openclaw mcp login orshot
+```
+
+Or add the MCP server and the skills one by one:
 
 ```bash
 openclaw mcp add orshot --url https://mcp.orshot.com/mcp --transport streamable-http --auth oauth
 openclaw mcp login orshot
 ```
 
-Then install the skills you need:
 
 ```bash
 openclaw skills install @orshot/orshot                          # automate video, PDF and image generation from templates and social media posting
@@ -50,7 +56,7 @@ clawhub login
 ./scripts/publish.sh --dry-run  # shows what would be published
 ```
 
-The script passes `--source-repo`, `--source-commit` and `--source-ref` so every ClawHub version links back to the commit it came from. After publishing, `clawhub scan --slug <slug> --version <v> --json` pulls the audit report for the new version.
+The script passes `--source-repo`, `--source-commit` and `--source-ref` so every ClawHub version links back to the commit it came from. The bundle plugin (`openclaw.plugin.json`, which lists the same skill folders and the MCP server) is published separately with `./scripts/publish-plugin.sh` after bumping `version` in `openclaw.plugin.json` and `package.json`. After publishing, `clawhub scan --slug <slug> --version <v> --json` pulls the audit report for the new version.
 
 ## Contributing
 
