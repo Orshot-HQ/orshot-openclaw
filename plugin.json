@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "orshot",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Automate video, PDF and image generation from templates and social media posting. Connects to the hosted Orshot MCP server with OAuth and loads the Orshot skills.",
   "author": {
     "name": "Orshot",
