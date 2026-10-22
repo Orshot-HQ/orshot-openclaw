@@ -33,6 +33,17 @@ display_name() {
 }
 
 
+# ClawHub category slugs (max 3): integrations, automation, research, development, productivity,
+# communication, creative, knowledge, agents, operations, security, finance, lifestyle, other.
+categories() {
+  case "$1" in
+    orshot) echo "creative,automation,integrations" ;;
+    orshot-social-media-scheduler) echo "communication,automation,productivity" ;;
+    orshot-carousel) echo "creative,communication,automation" ;;
+    orshot-social-media-content) echo "creative,productivity,automation" ;;
+  esac
+}
+
 topics() {
   case "$1" in
     orshot) echo "image-generation,pdf-generation,video-generation,templates,social-media" ;;
@@ -63,6 +74,7 @@ for dir in skills/*/; do
     --owner "$OWNER" \
     --version "$version" \
     --changelog "$changelog" \
+    --categories "$(categories "$slug")" \
     --topics "$(topics "$slug")" \
     --source-repo "$REPO" \
     --source-commit "$COMMIT" \

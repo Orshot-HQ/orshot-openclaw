@@ -56,7 +56,7 @@ clawhub login
 ./scripts/publish.sh --dry-run  # shows what would be published
 ```
 
-The script passes `--source-repo`, `--source-commit` and `--source-ref` so every ClawHub version links back to the commit it came from. The bundle plugin (`openclaw.plugin.json`, which lists the same skill folders and the MCP server) is published separately with `./scripts/publish-plugin.sh` after bumping `version` in `openclaw.plugin.json` and `package.json`. After publishing, `clawhub scan --slug <slug> --version <v> --json` pulls the audit report for the new version.
+The script passes `--source-repo`, `--source-commit` and `--source-ref` so every ClawHub version links back to the commit it came from. The bundle plugin (`openclaw.plugin.json`, which lists the same skill folders and the MCP server) is published separately with `./scripts/publish-plugin.sh` after bumping `version` in `openclaw.plugin.json` and `package.json`. After publishing, `clawhub scan --slug <slug> --version <v> --json` pulls the audit report for the new version. ClawHub caps the card summary at 500 characters and reads it from the frontmatter description, so after a publish open each skill's Settings page on ClawHub and check the short summary still fits.
 
 ## Contributing
 
