@@ -9,7 +9,7 @@ Orshot is an API for automated image, PDF and video generation from templates: h
 One line installs the bundle plugin: the hosted Orshot MCP server (OAuth, no API key, 100 free credits a month) plus all four skills.
 
 ```bash
-openclaw plugins install @orshot/orshot
+openclaw plugins install clawhub:orshot
 openclaw mcp login orshot
 ```
 
