@@ -1,0 +1,42 @@
+name: Publish to ClawHub
+
+# Runs on a version tag (v2026.10.22, v1, anything starting with v). Publishes every skill whose
+# frontmatter version is not yet on ClawHub, with provenance pointing at the tagged commit.
+# Needs the CLAWHUB_TOKEN repository secret (clawhub login --token). Nothing runs on plain pushes.
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Only print what would be published
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install -g clawhub@0.23.3
+      - run: clawhub login --token "$CLAWHUB_TOKEN" --label "github-actions"
+        env:
+          CLAWHUB_TOKEN: ${{ secrets.CLAWHUB_TOKEN }}
+      - run: clawhub whoami
+      - name: Publish
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
+            ./scripts/publish.sh --dry-run
+          else
+            ./scripts/publish.sh
+          fi
