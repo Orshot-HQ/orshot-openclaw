@@ -1,6 +1,6 @@
 {
   "name": "orshot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Orshot bundle plugin for OpenClaw: hosted MCP server plus skills for image, PDF and video generation from templates and social media posting. No runtime code.",
   "license": "MIT-0",
   "homepage": "https://orshot.com/agents/openclaw",
@@ -8,5 +8,14 @@
     "type": "git",
     "url": "https://github.com/Orshot-HQ/orshot-openclaw"
   },
-  "keywords": ["openclaw", "clawhub", "mcp", "orshot", "image-generation", "pdf-generation", "video-generation", "social-media-scheduler"]
+  "keywords": [
+    "openclaw",
+    "clawhub",
+    "mcp",
+    "orshot",
+    "image-generation",
+    "pdf-generation",
+    "video-generation",
+    "social-media-scheduler"
+  ]
 }

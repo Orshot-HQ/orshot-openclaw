@@ -5,6 +5,8 @@
 !plugin.json
 !mcp.json
 !package.json
+!assets/
+!assets/icon.png
 !README.md
 !LICENSE
 !skills/
