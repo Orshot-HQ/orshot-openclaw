@@ -4,7 +4,7 @@
 #
 # Needs: clawhub CLI (npm install -g clawhub@0.23.3) and a login (clawhub login).
 # Display names below carry the phrases people search for on ClawHub; keep them in sync
-# with the frontmatter descriptions.
+# with the frontmatter descriptions. ClawHub allows at most 5 topics per skill.
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
@@ -35,10 +35,10 @@ display_name() {
 
 topics() {
   case "$1" in
-    orshot) echo "image-generation,pdf-generation,video-generation,templates,og-image,social-media,orshot" ;;
-    orshot-social-media-scheduler) echo "social-media-scheduler,social-media-automation,schedule-posts,instagram,linkedin,tiktok,content-calendar,orshot" ;;
-    orshot-carousel) echo "carousel,tiktok-carousel,instagram-carousel,linkedin-carousel,tiktok-slideshow,orshot" ;;
-    orshot-social-media-content) echo "social-media-content,instagram-post,linkedin-post,tiktok,social-media-design,content-creation,templates,canva,orshot" ;;
+    orshot) echo "image-generation,pdf-generation,video-generation,templates,social-media" ;;
+    orshot-social-media-scheduler) echo "social-media-scheduler,social-media-automation,schedule-posts,instagram,linkedin" ;;
+    orshot-carousel) echo "carousel,tiktok-carousel,instagram-carousel,linkedin-carousel,tiktok-slideshow" ;;
+    orshot-social-media-content) echo "social-media-content,instagram-post,linkedin-post,social-media-design,content-creation" ;;
   esac
 }
 
