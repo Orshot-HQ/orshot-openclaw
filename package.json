@@ -1,5 +1,5 @@
 {
-  "name": "@orshot/orshot-openclaw",
+  "name": "orshot",
   "version": "1.0.0",
   "description": "Orshot bundle plugin for OpenClaw: hosted MCP server plus skills for image, PDF and video generation from templates and social media posting. No runtime code.",
   "license": "MIT-0",
